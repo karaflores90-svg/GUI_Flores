@@ -5,6 +5,7 @@
  */
 package main;
 
+import config.config;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -157,48 +158,54 @@ jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                                             
+                                        
     String email = jTextField1.getText().trim();
     String password = jTextField2.getText().trim();
 
-    // 1. Check if fields are empty
     if (email.isEmpty() || password.isEmpty()) {
-        JOptionPane.showMessageDialog(
-            this,
-            "Please fill in both Email and Password fields.",
-            "Incomplete Data",
-            JOptionPane.WARNING_MESSAGE
-        );
+        JOptionPane.showMessageDialog(this, "Please fill in both Email and Password fields.", "Incomplete Data", JOptionPane.WARNING_MESSAGE);
         return;
     }
 
-    // 2. Check if an account has been created
-    if (UserSession.email == null || UserSession.password == null) {
-        JOptionPane.showMessageDialog(
-            this,
-            "No account yet. Please register first.",
-            "No Account",
-            JOptionPane.WARNING_MESSAGE
-        );
+    config db = new config();
+    java.sql.Connection conn = db.connectDB();
+    if (conn == null) {
+        JOptionPane.showMessageDialog(this, "Database connection failed.", "DB Error", JOptionPane.ERROR_MESSAGE);
         return;
     }
+    
+    String enteredHashedPassword = utils.hashPassword(password);
 
-    // 3. Validate login using the registered account
-    if (email.equals(UserSession.email) && password.equals(UserSession.password)) {
-        JOptionPane.showMessageDialog(this, "Login Successful!");
+    try {
+        String sql = "SELECT * FROM tbl_account WHERE email = ? AND pass = ?";
+        java.sql.PreparedStatement pst = conn.prepareStatement(sql);
+        pst.setString(1, email);
+        pst.setString(2, enteredHashedPassword);
 
-        landingPage home = new landingPage();
-        home.setVisible(true);
-        this.dispose();
-    } else {
-        // Now this correctly shows when the password or email is wrong
-        JOptionPane.showMessageDialog(
-            this,
-            "Incorrect email or password. Please try again.",
-            "Login Error",
-            JOptionPane.ERROR_MESSAGE
-        );
+        java.sql.ResultSet rs = pst.executeQuery();
+
+        if (rs.next()) {
+            // ✅ Login success based on database
+            JOptionPane.showMessageDialog(this, "Login Successful!");
+
+            // Store session info
+            UserSession.email = rs.getString("email");
+            UserSession.password = rs.getString("pass");
+
+            // Open landingPage
+            landingPage home = new landingPage();
+            home.setVisible(true);
+            this.dispose(); // close login form
+        } else {
+            JOptionPane.showMessageDialog(this, "Incorrect email or password.", "Login Error", JOptionPane.ERROR_MESSAGE);
+        }
+
+        rs.close();
+        pst.close();
+        conn.close();
+    } catch (java.sql.SQLException e) {
     }
+
 
     
 

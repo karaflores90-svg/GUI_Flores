@@ -5,7 +5,9 @@
  */
 package main;
 
+import config.config;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -104,7 +106,7 @@ public class registration extends javax.swing.JFrame {
 
         jButton1.setBackground(new java.awt.Color(204, 153, 255));
         jButton1.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jButton1.setText("Back To Login");
+        jButton1.setText("Exit");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -133,9 +135,19 @@ public class registration extends javax.swing.JFrame {
     }//GEN-LAST:event_jTextField4ActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        landingForm login = new landingForm();
-    login.setVisible(true);
-    this.dispose();
+       int response = JOptionPane.showConfirmDialog(
+        null,
+        "Are you sure you want to exit the Registration form?",
+        "Exit Confirmation",
+        JOptionPane.YES_NO_OPTION,
+        JOptionPane.QUESTION_MESSAGE
+    );
+
+    // Check if the user clicked YES
+    if (response == JOptionPane.YES_OPTION) {
+        // Close the login form
+       System.exit(0);   // 'this' refers to the current JFrame
+    }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
@@ -167,7 +179,11 @@ public class registration extends javax.swing.JFrame {
         );
         return;
     }
-      
+     config db = new config();
+    String sql = "INSERT INTO tbl_account(full_name, email, contact, pass) VALUES (?, ?, ?, ?)";
+         String hashedPassword = utils.hashPassword(password);
+        db.addRecord(sql, fullName, email, contact, hashedPassword);
+    
     // Success message
     javax.swing.JOptionPane.showMessageDialog(
             this,
