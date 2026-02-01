@@ -5,6 +5,7 @@
  */
 package main;
 
+import admin.adminDashboard;
 import config.config;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
@@ -158,9 +159,11 @@ jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-                                        
-    String email = jTextField1.getText().trim();
-    String password = jTextField2.getText().trim();
+        
+        
+         
+       String email = jTextField1.getText().trim();
+       String password = jTextField2.getText().trim();
 
     if (email.isEmpty() || password.isEmpty()) {
         JOptionPane.showMessageDialog(this, "Please fill in both Email and Password fields.", "Incomplete Data", JOptionPane.WARNING_MESSAGE);
@@ -185,16 +188,29 @@ jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
         java.sql.ResultSet rs = pst.executeQuery();
 
         if (rs.next()) {
-            // ✅ Login success based on database
+            String status = rs.getString("status");
+            String role = rs.getString("role");
+
+            // Check if account is active
+            if (status.equals("Pending")) {
+                JOptionPane.showMessageDialog(this, "Your account is pending approval. Please wait.", "Pending Account", JOptionPane.WARNING_MESSAGE);
+                return;
+            }
+
+            // ✅ Login successful
             JOptionPane.showMessageDialog(this, "Login Successful!");
 
             // Store session info
             UserSession.email = rs.getString("email");
             UserSession.password = rs.getString("pass");
+            UserSession.role = role;
 
-            // Open landingPage
-            landingPage home = new landingPage();
-            home.setVisible(true);
+            // Redirect based on role
+            if (role.equalsIgnoreCase("Admin")) {
+                adminDashboard admin = new adminDashboard();
+                admin.setVisible(true);
+            }
+
             this.dispose(); // close login form
         } else {
             JOptionPane.showMessageDialog(this, "Incorrect email or password.", "Login Error", JOptionPane.ERROR_MESSAGE);
@@ -204,7 +220,9 @@ jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
         pst.close();
         conn.close();
     } catch (java.sql.SQLException e) {
+        JOptionPane.showMessageDialog(this, "Database error: " + e.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
     }
+
 
 
     

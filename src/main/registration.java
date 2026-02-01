@@ -151,7 +151,7 @@ public class registration extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       String fullName = jTextField1.getText().trim();
+     String fullName = jTextField1.getText().trim();
     String email = jTextField2.getText().trim(); 
     String contact = jTextField3.getText().trim();
     String password = jTextField4.getText().trim();
@@ -180,9 +180,10 @@ public class registration extends javax.swing.JFrame {
         return;
     }
      config db = new config();
-    String sql = "INSERT INTO tbl_account(full_name, email, contact, pass) VALUES (?, ?, ?, ?)";
-         String hashedPassword = utils.hashPassword(password);
-        db.addRecord(sql, fullName, email, contact, hashedPassword);
+    String sql = "INSERT INTO tbl_account(full_name, email, contact, pass, role, status) VALUES (?, ?, ?, ?, ?, ?)";
+         String hashedPassword = utils.hashPassword(password); 
+        db.addRecord(sql, fullName, email, contact, hashedPassword, "Admin", "Pending" );
+
     
     // Success message
     javax.swing.JOptionPane.showMessageDialog(
