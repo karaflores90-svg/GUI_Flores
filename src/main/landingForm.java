@@ -5,7 +5,9 @@
  */
 package main;
 
+import admin.accounts;
 import admin.adminDashboard;
+import adopters.adoptersDashboard;
 import config.config;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
@@ -200,21 +202,20 @@ jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
             // ✅ Login successful
             JOptionPane.showMessageDialog(this, "Login Successful!");
 
-            // Store session info
-            UserSession.email = rs.getString("email");
-            UserSession.password = rs.getString("pass");
-            UserSession.role = role;
+         String name = rs.getString("full_name"); 
+            UserSession.name = name;
+           UserSession.email = rs.getString("email");
+          UserSession.password = rs.getString("pass");
+          UserSession.role = role;
+          UserSession.status = status;
+            accounts accountsForm = new accounts(); // create the accounts JFrame accountsForm.setVisible(true); this.dispose(); // close login form } else { JOptionPane.showMessageDialog(this, "Incorrect email or password.", "Login Error", JOptionPane.ERROR_MESSAGE); }
+        accountsForm.setVisible(true);
+    
 
-            // Redirect based on role
-            if (role.equalsIgnoreCase("Admin")) {
-                adminDashboard admin = new adminDashboard();
-                admin.setVisible(true);
-            }
-
-            this.dispose(); // close login form
-        } else {
-            JOptionPane.showMessageDialog(this, "Incorrect email or password.", "Login Error", JOptionPane.ERROR_MESSAGE);
-        }
+    this.dispose(); // close login form
+} else {
+    JOptionPane.showMessageDialog(this, "Incorrect email or password.", "Login Error", JOptionPane.ERROR_MESSAGE);
+}
 
         rs.close();
         pst.close();

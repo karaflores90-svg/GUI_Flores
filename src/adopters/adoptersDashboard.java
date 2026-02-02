@@ -1,53 +1,22 @@
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package adopters;
 
-package admin;
-
-import admin.userTable;
-import admin.manageDogs;      
-import admin.adoptersDashboard;
-import admin.adoptionDashboard;
-
-public class adminDashboard extends javax.swing.JFrame {
+/**
+ *
+ * @author USER39
+ */
+public class adoptersDashboard extends javax.swing.JFrame {
 
     /**
-     * Creates new form adminDashboard
+     * Creates new form adoptersDashboard
      */
-    public adminDashboard() {
+    public adoptersDashboard() {
         initComponents();
-        setupSidebar();
-        setActive(jLabel3);
-        
-        
-        }
-      private void setupSidebar() {
-     
-    javax.swing.JLabel[] labels = {
-        jLabel3, jLabel4, jLabel5, jLabel6,
-        jLabel7, jLabel8, jLabel9, jLabel10
-    };
-
-    for (javax.swing.JLabel lbl : labels) {
-        lbl.setOpaque(false); // 👈 NO background initially
-        lbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
     }
-}
-
-   private void resetSidebar() {
-    javax.swing.JLabel[] labels = {
-        jLabel3, jLabel4, jLabel5, jLabel6,
-        jLabel7, jLabel8, jLabel9, jLabel10
-    };
-
-    for (javax.swing.JLabel lbl : labels) {
-        lbl.setOpaque(false);   // remove background
-        lbl.repaint();
-    }
-}
- private void setActive(javax.swing.JLabel label) {
-    resetSidebar();
-    label.setOpaque(true);
-    label.setBackground(java.awt.Color.WHITE);
-    label.repaint();
-}
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -58,10 +27,10 @@ public class adminDashboard extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        jPanel3 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
+        jPanel3 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
+        jLabel11 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
@@ -75,21 +44,22 @@ public class adminDashboard extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel3.setBackground(new java.awt.Color(255, 255, 255));
-        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jPanel1.setBackground(new java.awt.Color(204, 153, 255));
+        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-        jPanel1.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -20, 310, 100));
+        jPanel3.setBackground(new java.awt.Color(204, 153, 255));
+        jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel2.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel2.setText("ADMIN DASHBOARD");
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 0, 590, 70));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
+        jLabel2.setText("ADOPTERS DASHBOARD");
+        jPanel3.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -110, 330, 280));
 
-        jPanel3.add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 70));
+        jLabel11.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
+        jLabel11.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
+        jLabel11.setText("ADOPTERS DASHBOARD");
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 4, 600, 70));
+
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 70));
 
         jPanel2.setBackground(new java.awt.Color(204, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -146,7 +116,7 @@ public class adminDashboard extends javax.swing.JFrame {
 
         jLabel8.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel8.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel8.setText("Account");
+        jLabel8.setText("Accounts");
         jLabel8.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jLabel8MouseClicked(evt);
@@ -174,75 +144,68 @@ public class adminDashboard extends javax.swing.JFrame {
         });
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 280, 170, 30));
 
-        jPanel3.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 160, 390));
+        jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 160, 390));
 
-        getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 700, 460));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 460));
 
         pack();
-        setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-    resetSidebar();
-    setActive(jLabel3);
-    jLabel3.setOpaque(true);
-    jLabel3.setBackground(java.awt.Color.WHITE);
-
-    }//GEN-LAST:event_jLabel3MouseClicked
-
-    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-    resetSidebar();
-    setActive(jLabel4);
-    jLabel4.setOpaque(true);
-    jLabel4.setBackground(java.awt.Color.WHITE);
-    }//GEN-LAST:event_jLabel4MouseClicked
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-      resetSidebar();
-      setActive(jLabel5);
-     jLabel5.setOpaque(true);
-    jLabel5.setBackground(java.awt.Color.WHITE);
-    }//GEN-LAST:event_jLabel5MouseClicked
-
-    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-    resetSidebar();
-    setActive(jLabel6);
-    jLabel6.setOpaque(true);
-    jLabel6.setBackground(java.awt.Color.WHITE);
-    }//GEN-LAST:event_jLabel6MouseClicked
-
-    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-        resetSidebar();
-        setActive(jLabel7);
-        jLabel7.setOpaque(true);
-    jLabel7.setBackground(java.awt.Color.WHITE);
-     userTable ut = new userTable();
-    ut.setVisible(true);
-    }//GEN-LAST:event_jLabel7MouseClicked
-
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
-        resetSidebar();
-        setActive(jLabel9);
-        jLabel9.setOpaque(true);
-    jLabel9.setBackground(java.awt.Color.WHITE);
-    }//GEN-LAST:event_jLabel9MouseClicked
-
     private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        resetSidebar();
-        setActive(jLabel10);
+       
+     
         jLabel10.setOpaque(true);
-    jLabel10.setBackground(java.awt.Color.WHITE);
+        jLabel10.setBackground(java.awt.Color.WHITE);
     }//GEN-LAST:event_jLabel10MouseClicked
 
-    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-        resetSidebar();
-        setActive(jLabel8);
-        jLabel8.setOpaque(true);
-    jLabel8.setBackground(java.awt.Color.WHITE);
+    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
     
-    accounts acc = new accounts();
-    acc.setVisible(true);
+       
+        jLabel9.setOpaque(true);
+        jLabel9.setBackground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_jLabel9MouseClicked
+
+    private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
+      
+        
+        jLabel8.setOpaque(true);
+        jLabel8.setBackground(java.awt.Color.WHITE);
     }//GEN-LAST:event_jLabel8MouseClicked
+
+    private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
+        
+        jLabel7.setOpaque(true);
+        jLabel7.setBackground(java.awt.Color.WHITE);
+       
+    }//GEN-LAST:event_jLabel7MouseClicked
+
+    private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
+      
+      
+        jLabel6.setOpaque(true);
+        jLabel6.setBackground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_jLabel6MouseClicked
+
+    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    
+     
+        jLabel5.setOpaque(true);
+        jLabel5.setBackground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_jLabel5MouseClicked
+
+    private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
+       
+     
+        jLabel4.setOpaque(true);
+        jLabel4.setBackground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_jLabel4MouseClicked
+
+    private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
+       
+       
+        jLabel3.setOpaque(true);
+        jLabel3.setBackground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_jLabel3MouseClicked
 
     /**
      * @param args the command line arguments
@@ -261,27 +224,27 @@ public class adminDashboard extends javax.swing.JFrame {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(adminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adoptersDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(adminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adoptersDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(adminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adoptersDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(adminDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(adoptersDashboard.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
-                new adminDashboard().setVisible(true);
+                new adoptersDashboard().setVisible(true);
             }
         });
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
