@@ -55,6 +55,7 @@ public void addRecord(String sql, Object... values) {
     } catch (SQLException e) {
         System.out.println("Error adding record: " + e.getMessage());
     }
+    
 }
 
 public String authenticate(String sql, Object... values) {

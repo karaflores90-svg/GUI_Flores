@@ -12,6 +12,8 @@ import config.config;
 import java.awt.Cursor;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
+import staff.staffacc;
+import staff.staffdashboard;
 
 /**
  *
@@ -208,9 +210,21 @@ jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
           UserSession.password = rs.getString("pass");
           UserSession.role = role;
           UserSession.status = status;
-            accounts accountsForm = new accounts(); // create the accounts JFrame accountsForm.setVisible(true); this.dispose(); // close login form } else { JOptionPane.showMessageDialog(this, "Incorrect email or password.", "Login Error", JOptionPane.ERROR_MESSAGE); }
-        accountsForm.setVisible(true);
-    
+          
+           if (role.equalsIgnoreCase("Admin")) {
+        accounts adminAccountsForm = new accounts();
+        adminAccountsForm.setVisible(true);
+    } else if (role.equalsIgnoreCase("Staff")) {
+        staffacc staffProfileForm = new staffacc();
+         staffProfileForm.setVisible(true);
+
+    } else if (role.equalsIgnoreCase("Adopter")) {
+        adoptersDashboard adopterProfileForm = new adoptersDashboard();
+        adopterProfileForm.setVisible(true);
+    } else {
+        JOptionPane.showMessageDialog(this, "Unknown role. Contact administrator.", "Role Error", JOptionPane.ERROR_MESSAGE);
+        return;
+    }
 
     this.dispose(); // close login form
 } else {

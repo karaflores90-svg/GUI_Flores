@@ -330,13 +330,6 @@ public class userTable extends javax.swing.JFrame {
         jLabel9.setBackground(java.awt.Color.WHITE);
     }//GEN-LAST:event_jLabel9MouseClicked
 
-    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
-        resetSidebar();
-         setActive(jLabel10);
-        jLabel10.setOpaque(true);
-        jLabel10.setBackground(java.awt.Color.WHITE);
-    }//GEN-LAST:event_jLabel10MouseClicked
-
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
                                          
     String fullname = javax.swing.JOptionPane.showInputDialog("Enter Full Name:");
@@ -354,7 +347,7 @@ public class userTable extends javax.swing.JFrame {
     String sql = "INSERT INTO tbl_account (full_name, email, contact, pass, role, status) VALUES (?, ?, ?, ?, ?, ?)";
     conf.addRecord(sql, fullname, email, contact, pass, role, status);
 
-    displayUser(); // refresh table
+    displayUser();
 
 
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -364,14 +357,17 @@ public class userTable extends javax.swing.JFrame {
     int id = getSelectedUserId();
     if(id == -1) return;
 
-    // Prompt for new status only
+    String role = javax.swing.JOptionPane.showInputDialog("Enter new Role (Admin/Staff/Adopter):");
+    if(role == null || role.isEmpty()) return; 
+    
     String status = javax.swing.JOptionPane.showInputDialog("Enter new Status (Active/Pending):");
     if(status == null || status.isEmpty()) return; // If cancel or empty, do nothing
 
     // Update only the status column in the database
     config.config conf = new config.config();
-    String sql = "UPDATE tbl_account SET status=? WHERE u_id=?";
-    conf.addRecord(sql, status, id);
+    String sql = "UPDATE tbl_account SET role=?, status=? WHERE u_id=?";
+
+    conf.addRecord(sql, role,status, id);
 
     // Refresh the table to show the updated status
     displayUser();
@@ -416,6 +412,13 @@ public class userTable extends javax.swing.JFrame {
     jTextField1.setText("");
     
     }//GEN-LAST:event_jButton4ActionPerformed
+
+    private void jLabel10MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel10MouseClicked
+        resetSidebar();
+        setActive(jLabel10);
+        jLabel10.setOpaque(true);
+        jLabel10.setBackground(java.awt.Color.WHITE);
+    }//GEN-LAST:event_jLabel10MouseClicked
 
     /**
      * @param args the command line arguments

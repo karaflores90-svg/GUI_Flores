@@ -218,6 +218,7 @@ public class adminDashboard extends javax.swing.JFrame {
     jLabel7.setBackground(java.awt.Color.WHITE);
      userTable ut = new userTable();
     ut.setVisible(true);
+     this.dispose();
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
