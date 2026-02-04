@@ -202,6 +202,9 @@ public class adminDashboard extends javax.swing.JFrame {
       setActive(jLabel5);
      jLabel5.setOpaque(true);
     jLabel5.setBackground(java.awt.Color.WHITE);
+    adoptersDashboard ad = new adoptersDashboard();
+    ad.setVisible(true);
+    this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
@@ -243,6 +246,8 @@ public class adminDashboard extends javax.swing.JFrame {
     
     accounts acc = new accounts();
     acc.setVisible(true);
+    this.dispose();
+
     }//GEN-LAST:event_jLabel8MouseClicked
 
     /**

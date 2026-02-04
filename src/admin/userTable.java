@@ -284,9 +284,8 @@ public class userTable extends javax.swing.JFrame {
         jLabel4.setOpaque(true);
         jLabel4.setBackground(java.awt.Color.WHITE);
         
-    manageDogs md = new manageDogs();
-    md.setVisible(true);
-    this.dispose();
+   
+        
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
@@ -304,9 +303,8 @@ public class userTable extends javax.swing.JFrame {
          setActive(jLabel6);
         jLabel6.setOpaque(true);
         jLabel6.setBackground(java.awt.Color.WHITE);
-        adoptionDashboard ap = new adoptionDashboard();
-        ap.setVisible(true);
-        this.dispose();
+      
+        
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked

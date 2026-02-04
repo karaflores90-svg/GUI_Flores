@@ -48,6 +48,7 @@ public class accounts extends javax.swing.JFrame {
         jPanel4 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jPanel5 = new javax.swing.JPanel();
+        jLabel15 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
@@ -165,12 +166,16 @@ public class accounts extends javax.swing.JFrame {
 
         jPanel5.setBackground(new java.awt.Color(204, 153, 255));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+
+        jLabel15.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/user (4).png"))); // NOI18N
+        jPanel5.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 190, 190));
+
         jPanel2.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(340, 20, 190, 190));
 
         jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 18)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         jLabel1.setText("PROFILE SETTINGS");
-        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 10, 210, 40));
+        jPanel2.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 0, 210, 40));
 
         jLabel2.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel2.setText("NAME:");
@@ -238,6 +243,7 @@ public class accounts extends javax.swing.JFrame {
         
         jLabel8.setOpaque(true);
         jLabel8.setBackground(java.awt.Color.WHITE);
+          this.dispose(); 
         
          
     }//GEN-LAST:event_jLabel8MouseClicked
@@ -295,6 +301,7 @@ public class accounts extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
     private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
