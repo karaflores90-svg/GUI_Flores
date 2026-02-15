@@ -6,6 +6,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import net.proteanit.sql.DbUtils;
 
 
@@ -89,5 +90,32 @@ public void displayData(String sql, javax.swing.JTable table) {
         System.out.println("Error displaying data: " + e.getMessage());
     }
 }
-    
+public boolean checkRecordExists(String sql, String param) {
+    try (Connection conn = connectDB();  // get connection from your method
+         PreparedStatement pst = conn.prepareStatement(sql)) {
+
+        pst.setString(1, param);  // set the parameter
+        try (ResultSet rs = pst.executeQuery()) {
+            return rs.next(); // returns true if a record exists
+        }
+
+    } catch (SQLException e) {
+        e.printStackTrace();
+        return false;
+    }
 }
+
+    public ResultSet getRecords(String sql) throws SQLException {
+    Connection conn = connectDB(); // create connection here
+    Statement stmt = conn.createStatement();
+    return stmt.executeQuery(sql);
+}
+
+    public void updateRecords(String string) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
+
+}
+
+
+     

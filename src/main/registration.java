@@ -173,6 +173,20 @@ public class registration extends javax.swing.JFrame {
     
     
      config db = new config();
+     
+     // Check if email already exists
+    String checkEmailSql = "SELECT * FROM tbl_account WHERE email = ?";
+    boolean exists = db.checkRecordExists(checkEmailSql, email);
+
+    if (exists) {
+        JOptionPane.showMessageDialog(
+                this,
+                "An account with this email already exists!",
+                "Error",
+                JOptionPane.ERROR_MESSAGE
+        );
+        return;
+    }
     String sql = "INSERT INTO tbl_account(full_name, email, contact, pass, role, status) VALUES (?, ?, ?, ?, ?, ?)";
          String hashedPassword = utils.hashPassword(password); 
         db.addRecord(sql, fullName, email, contact, hashedPassword, "Admin", "Pending" );

@@ -13,6 +13,8 @@ public class staffacc extends javax.swing.JFrame {
     public staffacc() {
        initComponents();
         displayUserInfo();
+        setupSidebar();
+        setActive(jLabel8);
     }
  private void displayUserInfo() {
     jLabel2.setText("NAME: " + UserSession.name);
@@ -20,7 +22,36 @@ public class staffacc extends javax.swing.JFrame {
     jLabel12.setText("TYPE: " + UserSession.role);
     jLabel13.setText("STATUS: " + UserSession.status);
  }
- 
+  private void setupSidebar() {
+     
+    javax.swing.JLabel[] labels = {
+        jLabel3, jLabel4, jLabel5, jLabel6,
+        jLabel7, jLabel8 
+    };
+
+    for (javax.swing.JLabel lbl : labels) {
+        lbl.setOpaque(false); // 👈 NO background initially
+        lbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }
+}
+
+   private void resetSidebar() {
+    javax.swing.JLabel[] labels = {
+        jLabel3, jLabel4, jLabel5, jLabel6,
+        jLabel7, jLabel8
+    };
+
+    for (javax.swing.JLabel lbl : labels) {
+        lbl.setOpaque(false);   // remove background
+        lbl.repaint();
+    }
+}
+ private void setActive(javax.swing.JLabel label) {
+    resetSidebar();
+    label.setOpaque(true);
+    label.setBackground(java.awt.Color.WHITE);
+    label.repaint();
+}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -161,7 +192,8 @@ public class staffacc extends javax.swing.JFrame {
  
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-       
+       resetSidebar();
+      setActive(jLabel3);
         jLabel3.setOpaque(true);
         jLabel3.setBackground(java.awt.Color.WHITE);
         
@@ -172,37 +204,55 @@ public class staffacc extends javax.swing.JFrame {
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-
+         resetSidebar();
+        setActive(jLabel4);
         jLabel4.setOpaque(true);
         jLabel4.setBackground(java.awt.Color.WHITE);
+         Dogs staffDog = new Dogs();
+        staffDog.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-
+        resetSidebar();
+        setActive(jLabel5);
         jLabel5.setOpaque(true);
         jLabel5.setBackground(java.awt.Color.WHITE);
+         adoptreq staffreq = new adoptreq();
+        staffreq.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-
+        resetSidebar();
+       setActive(jLabel6);
         jLabel6.setOpaque(true);
         jLabel6.setBackground(java.awt.Color.WHITE);
+         surrender staffsurr = new surrender();
+        staffsurr.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel7MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel7MouseClicked
-
+        resetSidebar();
+        setActive(jLabel7);
         jLabel7.setOpaque(true);
         jLabel7.setBackground(java.awt.Color.WHITE);
+         adopters staffadopt = new adopters();
+        staffadopt.setVisible(true);
+
+        this.dispose();
     }//GEN-LAST:event_jLabel7MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-
+        resetSidebar();
+        setActive(jLabel8);
         jLabel8.setOpaque(true);
         jLabel8.setBackground(java.awt.Color.WHITE);
-
-        staffacc acc = new staffacc();
-        acc.setVisible(true);
-           this.dispose();
+    
     }//GEN-LAST:event_jLabel8MouseClicked
 
     /**

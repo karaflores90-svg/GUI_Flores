@@ -9,13 +9,14 @@ public class adoptersDashboard extends javax.swing.JFrame {
     
     public adoptersDashboard() {
         initComponents();
+        setupSidebar();
         setActive(jLabel13);
     }
      private void setupSidebar() {
      
     javax.swing.JLabel[] labels = {
-         jLabel1, jLabel2, jLabel13, jLabel14,
-        jLabel15, jLabel16, jLabel17, jLabel18
+         jLabel11, jLabel12, jLabel13, jLabel14,
+        jLabel15, jLabel16
     };
 
     for (javax.swing.JLabel lbl : labels) {
@@ -26,8 +27,8 @@ public class adoptersDashboard extends javax.swing.JFrame {
 
    private void resetSidebar() {
     javax.swing.JLabel[] labels = {
-        jLabel1, jLabel2, jLabel13, jLabel14,
-        jLabel15, jLabel16, jLabel17, jLabel18
+        jLabel11, jLabel12, jLabel13, jLabel14,
+        jLabel15, jLabel16
     };
 
     for (javax.swing.JLabel lbl : labels) {
@@ -65,11 +66,6 @@ public class adoptersDashboard extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jPanel4 = new javax.swing.JPanel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
 
         jPanel2.setBackground(new java.awt.Color(204, 153, 255));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -171,7 +167,7 @@ public class adoptersDashboard extends javax.swing.JFrame {
                 jLabel11MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 40, 160, 30));
+        jPanel3.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 90, 160, 30));
 
         jLabel12.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel12.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -181,7 +177,7 @@ public class adoptersDashboard extends javax.swing.JFrame {
                 jLabel12MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 80, 160, 30));
+        jPanel3.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 140, 160, 30));
 
         jLabel13.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel13.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -191,7 +187,7 @@ public class adoptersDashboard extends javax.swing.JFrame {
                 jLabel13MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 120, 170, 30));
+        jPanel3.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 190, 170, 30));
 
         jLabel14.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel14.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -201,7 +197,7 @@ public class adoptersDashboard extends javax.swing.JFrame {
                 jLabel14MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 160, 170, 30));
+        jPanel3.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 240, 170, 30));
 
         jLabel15.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel15.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -211,7 +207,7 @@ public class adoptersDashboard extends javax.swing.JFrame {
                 jLabel15MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 200, 170, 30));
+        jPanel3.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 290, 170, 30));
 
         jLabel16.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
         jLabel16.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -221,42 +217,9 @@ public class adoptersDashboard extends javax.swing.JFrame {
                 jLabel16MouseClicked(evt);
             }
         });
-        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 160, 30));
+        jPanel3.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 430, 160, 30));
 
-        jLabel17.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel17.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel17.setText("Reports");
-        jLabel17.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel17MouseClicked(evt);
-            }
-        });
-        jPanel3.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 240, 170, 30));
-
-        jLabel18.setFont(new java.awt.Font("Times New Roman", 0, 14)); // NOI18N
-        jLabel18.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel18.setText("Settings");
-        jLabel18.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel18MouseClicked(evt);
-            }
-        });
-        jPanel3.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(-10, 280, 170, 30));
-
-        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 70, 160, 390));
-
-        jPanel4.setBackground(new java.awt.Color(204, 153, 255));
-        jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logo.png"))); // NOI18N
-        jPanel4.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(-170, -100, 320, 260));
-
-        jLabel1.setFont(new java.awt.Font("Times New Roman", 0, 24)); // NOI18N
-        jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
-        jLabel1.setText("ADOPTERS DASHBOARD");
-        jPanel4.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 0, 600, 70));
-
-        jPanel1.add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 70));
+        jPanel1.add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 160, 460));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 710, 460));
 
@@ -305,37 +268,49 @@ public class adoptersDashboard extends javax.swing.JFrame {
 
     private void jLabel11MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel11MouseClicked
         resetSidebar();
-        setActive(jLabel3);
-        jLabel3.setOpaque(true);
-        jLabel3.setBackground(java.awt.Color.WHITE);
+        setActive(jLabel11);
+        jLabel11.setOpaque(true);
+        jLabel11.setBackground(java.awt.Color.WHITE);
+         adminDashboard admin = new adminDashboard();
+       admin.setVisible(true);
+       this.dispose();
     }//GEN-LAST:event_jLabel11MouseClicked
 
     private void jLabel12MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel12MouseClicked
         resetSidebar();
-        setActive(jLabel4);
-        jLabel4.setOpaque(true);
-        jLabel4.setBackground(java.awt.Color.WHITE);
+        setActive(jLabel12);
+        jLabel12.setOpaque(true);
+        jLabel12.setBackground(java.awt.Color.WHITE);
+         manageDogs ad = new manageDogs();
+        ad.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel12MouseClicked
 
     private void jLabel13MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel13MouseClicked
         resetSidebar();
-        setActive(jLabel5);
-        jLabel5.setOpaque(true);
-        jLabel5.setBackground(java.awt.Color.WHITE);
+        setActive(jLabel13);
+        jLabel13.setOpaque(true);
+        jLabel13.setBackground(java.awt.Color.WHITE);
+        adoptersDashboard ad = new adoptersDashboard();
+         ad.setVisible(true);
+         this.dispose();
     }//GEN-LAST:event_jLabel13MouseClicked
 
     private void jLabel14MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel14MouseClicked
         resetSidebar();
-        setActive(jLabel6);
-        jLabel6.setOpaque(true);
-        jLabel6.setBackground(java.awt.Color.WHITE);
+        setActive(jLabel14);
+        jLabel14.setOpaque(true);
+        jLabel14.setBackground(java.awt.Color.WHITE);
+         adoptionDashboard ad = new adoptionDashboard();
+        ad.setVisible(true);
+        this.dispose();
     }//GEN-LAST:event_jLabel14MouseClicked
 
     private void jLabel15MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel15MouseClicked
         resetSidebar();
-        setActive(jLabel7);
-        jLabel7.setOpaque(true);
-        jLabel7.setBackground(java.awt.Color.WHITE);
+        setActive(jLabel15);
+        jLabel15.setOpaque(true);
+        jLabel15.setBackground(java.awt.Color.WHITE);
         userTable ut = new userTable();
         ut.setVisible(true);
         this.dispose();
@@ -343,28 +318,14 @@ public class adoptersDashboard extends javax.swing.JFrame {
 
     private void jLabel16MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel16MouseClicked
         resetSidebar();
-        setActive(jLabel8);
-        jLabel8.setOpaque(true);
-        jLabel8.setBackground(java.awt.Color.WHITE);
+        setActive(jLabel16);
+        jLabel16.setOpaque(true);
+        jLabel16.setBackground(java.awt.Color.WHITE);
 
         accounts acc = new accounts();
         acc.setVisible(true);
           this.dispose();
     }//GEN-LAST:event_jLabel16MouseClicked
-
-    private void jLabel17MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel17MouseClicked
-        resetSidebar();
-        setActive(jLabel9);
-        jLabel9.setOpaque(true);
-        jLabel9.setBackground(java.awt.Color.WHITE);
-    }//GEN-LAST:event_jLabel17MouseClicked
-
-    private void jLabel18MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel18MouseClicked
-        resetSidebar();
-        setActive(jLabel10);
-        jLabel10.setOpaque(true);
-        jLabel10.setBackground(java.awt.Color.WHITE);
-    }//GEN-LAST:event_jLabel18MouseClicked
 
     /**
      * @param args the command line arguments
@@ -402,7 +363,6 @@ public class adoptersDashboard extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -410,9 +370,6 @@ public class adoptersDashboard extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -423,6 +380,5 @@ public class adoptersDashboard extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
-    private javax.swing.JPanel jPanel4;
     // End of variables declaration//GEN-END:variables
 }

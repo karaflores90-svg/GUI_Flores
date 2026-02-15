@@ -17,6 +17,8 @@ public class adopteracc extends javax.swing.JFrame {
     public adopteracc() {
         initComponents();
         displayUserInfo();
+        setupSidebar();
+        setActive(jLabel8);
     }
 
     private void displayUserInfo() {
@@ -25,6 +27,37 @@ public class adopteracc extends javax.swing.JFrame {
     jLabel12.setText("TYPE: " + UserSession.role);
     jLabel13.setText("STATUS: " + UserSession.status);
  }
+    
+       private void setupSidebar() {
+     
+    javax.swing.JLabel[] labels = {
+        jLabel6, jLabel3, jLabel4, jLabel5,
+       jLabel8 
+    };
+
+    for (javax.swing.JLabel lbl : labels) {
+        lbl.setOpaque(false); // 👈 NO background initially
+        lbl.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+    }
+}
+
+   private void resetSidebar() {
+    javax.swing.JLabel[] labels = {
+        jLabel6, jLabel3, jLabel4, jLabel5,
+       jLabel8 
+    };
+
+    for (javax.swing.JLabel lbl : labels) {
+        lbl.setOpaque(false);   // remove background
+        lbl.repaint();
+    }
+}
+ private void setActive(javax.swing.JLabel label) {
+    resetSidebar();
+    label.setOpaque(true);
+    label.setBackground(java.awt.Color.WHITE);
+    label.repaint();
+}
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
@@ -163,45 +196,51 @@ public class adopteracc extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jLabel3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel3MouseClicked
-
+        resetSidebar();
+      setActive(jLabel3);
         jLabel3.setOpaque(true);
         jLabel3.setBackground(java.awt.Color.WHITE);
+        browsedogs bd = new browsedogs();
+        bd.setVisible(true);
+         this.dispose();
     }//GEN-LAST:event_jLabel3MouseClicked
 
     private void jLabel4MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel4MouseClicked
-
+        resetSidebar();
+      setActive(jLabel4);
         jLabel4.setOpaque(true);
         jLabel4.setBackground(java.awt.Color.WHITE);
+        application myapp = new application();
+        myapp.setVisible(true);
+         this.dispose();
     }//GEN-LAST:event_jLabel4MouseClicked
 
     private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
-
+        resetSidebar();
+      setActive(jLabel5);
         jLabel5.setOpaque(true);
         jLabel5.setBackground(java.awt.Color.WHITE);
+        surrender adsurr = new surrender();
+        adsurr.setVisible(true);
+         this.dispose();
     }//GEN-LAST:event_jLabel5MouseClicked
 
     private void jLabel6MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel6MouseClicked
-
+        resetSidebar();
+      setActive(jLabel6);
         jLabel6.setOpaque(true);
         jLabel6.setBackground(java.awt.Color.WHITE);
         adoptersDashboard dashboardForm = new adoptersDashboard();
         dashboardForm.setVisible(true);
-
-    // Close the current profile form
-    this.dispose();
+      this.dispose();
         
     }//GEN-LAST:event_jLabel6MouseClicked
 
     private void jLabel8MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel8MouseClicked
-
+        resetSidebar();
+      setActive(jLabel8);
         jLabel8.setOpaque(true);
         jLabel8.setBackground(java.awt.Color.WHITE);
-
-        adopteracc profileForm = new adopteracc();
-        profileForm.setVisible(true);
-
-        // Optionally close the dashboard
-        this.dispose();
     }//GEN-LAST:event_jLabel8MouseClicked
 
     /**
